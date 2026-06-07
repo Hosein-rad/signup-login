@@ -54,7 +54,7 @@ export default function Signup() {
       const data = await res.json();
       if (res.ok) {
         setMessage(
-          `خوش آمدید ${data.name}. تا لحظاتی دیگر به داشبورد منتقل می‌شوید.`
+          `خوش آمدید. تا لحظاتی دیگر به داشبورد منتقل می‌شوید.`
         );
         setTimeout(() => {
           router.push("/dashboard");
