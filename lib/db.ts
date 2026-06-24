@@ -12,8 +12,6 @@
 // export default pool;
 
 import mysql from "mysql2/promise";
-import fs from "fs";
-import path from "path";
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
@@ -23,7 +21,7 @@ const pool = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   ssl: {
-    ca: fs.readFileSync(path.join(process.cwd(), "ca.pem")),
+    ca: process.env.DB_SSL_CA, // a string containing the certificate
   },
 });
 
